@@ -1,0 +1,39 @@
+These APIs were added in libgweather-3.7.
+
+--- origsrc/gnome-weather-0.2/src/app.py	2012-12-01 08:59:51.000000000 -0600
++++ src/gnome-weather-0.2/src/app.py	2012-12-26 20:49:40.483436800 -0600
+@@ -81,8 +81,7 @@ class GnomeWeatherApp(Gtk.Application):
+     def on_startup(self):
+         self.world = GWeather.Location.new_world(False)
+         self.info = GWeather.Info(world=self.world,
+-                                  forecast_type=GWeather.ForecastType.LIST,
+-                                  enabled_providers=GWeather.Provider.ALL)
++                                  forecast_type=GWeather.ForecastType.LIST)
+ 
+         self._build_ui()
+ 
+--- origsrc/gnome-weather-0.2/src/conditions.py	2012-12-01 09:00:12.000000000 -0600
++++ src/gnome-weather-0.2/src/conditions.py	2012-12-26 20:51:19.343573200 -0600
+@@ -36,10 +36,6 @@ class ConditionsSidebar(Gtk.Grid):
+         self._wind = Gtk.Label(xalign=0.0, wrap=True)
+         self.add(self._wind)
+ 
+-        self._attribution = Gtk.Label(use_markup=True, xalign=0.0, wrap=True,
+-                                      max_width_chars=30)
+-        self.add(self._attribution)
+-
+         self.show_all()
+ 
+     def update(self, info):
+@@ -47,11 +43,3 @@ class ConditionsSidebar(Gtk.Grid):
+         self._temperature.props.label = _("Temperature: ") + \
+             info.get_temp_summary()
+         self._wind.props.label = _("Wind: ") + info.get_wind()
+-
+-        attr = info.get_attribution()
+-        if attr:
+-            self._attribution.props.label = attr
+-            self._attribution.show()
+-        else:
+-            self._attribution.hide()
+-
