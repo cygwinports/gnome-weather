@@ -1,12 +1,10 @@
-inherit gnome2 python3
+inherit gnome2
 
 NAME="gnome-weather"
-VERSION=0.2
+VERSION=3.8.2
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME weather application"
 DESCRIPTION="Standalone application which shows weather conditions and forecast."
 
-PATCH_URI="0.2-gweather36.patch"
-
-REQUIRES="girepository-Clutter1.0 girepository-Gtk3.0 girepository-GtkClutter1.0 girepository-GWeather3.0"
+ACLOCAL_FLAGS="-I libgd"
