@@ -1,13 +1,9 @@
 inherit gnome2
 
 NAME="gnome-weather"
-VERSION=3.10.1
+VERSION=3.18.1
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME weather application"
 DESCRIPTION="Standalone application which shows weather conditions and forecast."
 REQUIRES="girepository-Gtk3.0 girepository-GWeather3.0"
-
-PATCH_URI="3.8.2-libgd-dll.patch"
-
-ACLOCAL_FLAGS="-I libgd"
