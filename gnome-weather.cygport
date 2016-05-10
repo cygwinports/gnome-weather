@@ -6,4 +6,8 @@ RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="GNOME weather application"
 DESCRIPTION="Standalone application which shows weather conditions and forecast."
+
+ARCH=noarch
+
 REQUIRES="girepository-Gtk3.0 girepository-GWeather3.0"
+
